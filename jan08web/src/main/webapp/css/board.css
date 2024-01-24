@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+table {
+	width: 900px;
+	height: 400px;
+	border-collapse: collapse;
+}
+
+tr:hover {
+	background-color: orange;
+}
+
+th {
+	background-color: yellow;
+	border-bottom: 2px solid black;
+}
+
+td {
+	border-bottom: 1px solid gray;
+	text-align: center;
+}
+
+.title {
+	text-align: left;
+	width: 50%;
+}
+
+.w1 {
+	width: 10%
+}
+
+.w2 {
+	width: 20%
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	background-color: skyblue;
+}
+
+.title a {
+	text-decoration: none; /* 밑줄 그어지는거 없애기 */
+}
+
+.title a:visited {
+	color: black; /* 클릭한 애들 색 설정 */
+}
+
+.title a:link {
+	color: black;
+}
+
+.title a:hover {
+	color: white;
+}
+.paging {
+	margin: 0 auto;
+	width: 500px;
+	height: 30px;
+	background-color: #F2C2CB;
+	margin-top : 10px;
+	line-height : 30px;
+	text-align : center;
+}
+.currentBtn{
+	background-color: green;
+	color : red;
+	
+}
+span{
+	font-size:small;
+	color: red;
+	font-weight:bolder;
+	background-color: #c0c0c0;
+}

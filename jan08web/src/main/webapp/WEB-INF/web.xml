@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>jan08web</display-name>
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+    </welcome-file-list>
+    
+    <session-config>
+    	<session-timeout>20</session-timeout>
+    </session-config>
+    
+     <!-- 내가 추가해준것 -->
+    <!-- <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file> -->
+  
+<!--   <servlet>
+  		<servlet-name>board123</servlet-name>
+  		<jsp-file>/board.jsp</jsp-file> board.jsp를 board123 이라고 설정한다 ..
+  		
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>board123</servlet-name>
+  		<url-pattern>/board</url-pattern>  사용자가 /board 라고 입력하면(/board.jsp열어줘->) board123 열어줘
+  </servlet-mapping> -->
+  
+  <!-- 에러페이지 설정하기 -->
+  <error-page>
+  	<error-code>403</error-code>
+  	<location>/error.jsp</location>
+  
+  </error-page>
+  
+  
+  <!-- .jsp 호출은 다 막아버리겠다. index.jsp 도 접근 못해, 위에 index 만 열 수 있는거 추가해줘 -->
+  <security-constraint>
+      <display-name>JSP Protection</display-name>
+      <web-resource-collection>
+         <web-resource-name>SecureJSPPages</web-resource-name>
+         <url-pattern>*.jsp</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>nobody</role-name>
+      </auth-constraint>
+   </security-constraint>
+
+   <security-role>
+      <description>
+Nobody should be in this role so JSP files are protected
+from direct access.
+</description>
+      <role-name>nobody</role-name>
+   </security-role>
+  
+</web-app>
